@@ -1,3 +1,10 @@
+Scenario: Dois usuários distintos fazem a requisição de um pedido em um determinado intervalo de tempo
+	Given: “Pedro” e “Ana” estão na página de requisição de pedido
+	And: “Pedro” confirma seu pedido às 19:30
+	When: “Ana” confirma seu pedido às 20:00 
+	Then: o sistema confirma ambos os pedidos
+	And: o sistema aloca ambos os pedidos em uma fila por ordem cronológica de inserção
+---------------------------------------------------------------------------------------------
 Scenario: Um mesmo usuário faz a requisição de dois ou mais pedidos ao mesmo tempo
 	Given: “Pedro” está na página de requisição de pedido
 	And: “Pedro” confirma seu pedido às 19:30
