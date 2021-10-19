@@ -1,10 +1,17 @@
+Scenario: Um mesmo usuário faz a requisição de dois ou mais pedidos ao mesmo tempo
+	Given: “Pedro” está na página de requisição de pedido
+	And: “Pedro” confirma seu pedido às 19:30
+	When: “Pedro” confirma outro pedido às 19:32 
+	Then: o sistema confirma ambos os pedidos
+	And: o sistema aloca ambos os pedidos em uma fila por ordem cronológica de inserção
+---------------------------------------------------------------------------------------------
 Scenario: Um usuário faz a requisição depois do horário limite estabelecido
 	Given: “Pedro” está na página de requisição de pedido
 	And: o horário limite de funcionamento restabelecido é 23:00 
 	When: “Pedro” confirma seu pedido às 23:10 
 	Then: o sistema não confirma o pedido feito pelo usuário
 	And: o usuário recebe uma notificação de erro no pedido referente a horário não válido
-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 Scenario: Um usuário faz a requisição antes do horário limite estabelecido
 	Given: “Pedro” está na página de requisição de pedido
 	And: o horário limite de funcionamento restabelecido é 23:00 
