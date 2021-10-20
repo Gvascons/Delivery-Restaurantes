@@ -26,3 +26,16 @@ Scenario: Um usuário faz a requisição antes do horário limite estabelecido
 	Then: o sistema confirma o pedido feito pelo usuário
 	And: o usuário recebe uma notificação de sucesso no pedido
 	And: o sistema registra em uma tabela interna o ID do pedido referido
+---------------------------------------------------------------------------------------------
+Scenario: Um usuário faz uma requisição sem acesso à internet
+	Given: "Pedro" está na página de requisição de pedido
+	And: a sua máquina está em modo avião (sem acesso à internet)
+	When: "Pedro" faz a requisição de pedido
+	Then: o sistema não registra o pedido feito pelo usuário
+---------------------------------------------------------------------------------------------
+Scenario: Um usuário faz uma requisição sem método de pagamento
+	Given: "Pedro" está na página de requisição de pedido
+	And: "Pedro" não selecionou uma forma de pagamento
+	When: "Pedro" faz a requisição do pedido
+	Then: O sistema não aloca o pedido
+	And: O usuário visualiza uma mensagem de forma de pagamento ausente
