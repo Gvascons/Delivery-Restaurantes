@@ -39,4 +39,4 @@ Scenario: Um usuário faz uma requisição sem método de pagamento
 	When: "Pedro" faz a requisição do pedido
 	Then: O sistema não aloca o pedido
 	And: "Pedro" ainda está na página de requisição de pedido
-	And: O usuário visualiza um pop-up sobreposto à página de forma de pagamento ausente
+	And: O usuário visualiza um popup sobreposto à página de forma de pagamento ausente
