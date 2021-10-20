@@ -42,3 +42,4 @@ Scenario: Um usuário faz uma requisição sem método de pagamento
 	And: O usuário visualiza um pop-up sobreposto à página de forma de pagamento ausente
 	And: O usuário visualiza uma mensagem de forma de pagamento ausente
 ---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
