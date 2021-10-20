@@ -25,3 +25,9 @@ Scenario: Um usuário faz a requisição antes do horário limite estabelecido
 	When: “Pedro” confirma seu pedido às 22:00 
 	Then: o sistema confirma o pedido feito pelo usuário
 	And: o usuário recebe uma notificação de sucesso no pedido
+---------------------------------------------------------------------------------------------
+Scenario: Um usuário faz uma requisição sem acesso à internet
+	Given: "Pedro" está na página de requisição de pedido
+	And: a sua máquina está em modo avião (sem acesso à internet)
+	When: "Pedro" faz a requisição de pedido
+	Then: o sistema não registra o pedido feito pelo usuário
