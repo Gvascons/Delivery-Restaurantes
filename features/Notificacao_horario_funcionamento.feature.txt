@@ -41,5 +41,3 @@ Scenario: Um usuário faz uma requisição sem método de pagamento
 	And: "Pedro" ainda está na página de requisição de pedido
 	And: O usuário visualiza um pop-up sobreposto à página de forma de pagamento ausente
 	And: O usuário visualiza uma mensagem de forma de pagamento ausente
----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------
